@@ -1,0 +1,5 @@
+*.vcd
+*.out
+*_tb
+*.log
+work/
