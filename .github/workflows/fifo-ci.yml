@@ -1,0 +1,28 @@
+name: FIFO regression
+
+on:
+  push:
+    paths: ["fifo/**", ".github/workflows/fifo-ci.yml"]
+  pull_request:
+    paths: ["fifo/**", ".github/workflows/fifo-ci.yml"]
+  workflow_dispatch:
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Icarus Verilog
+        run: sudo apt-get update && sudo apt-get install -y iverilog
+      - name: Run self-checking regression
+        working-directory: fifo
+        run: make test | tee build/regression.log
+      - name: Preserve verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fifo-verification-evidence
+          path: |
+            fifo/build/regression.log
+            fifo/build/fifo.vcd

@@ -1,8 +1,12 @@
-# Verilog Programs
+# RTL Design and Verification Projects
 
-Beginner Verilog practice repository.
+Portfolio implementations with reproducible verification.
 
-## First Program
+## Featured: Parameterized Synchronous FIFO
+
+The [FIFO project](fifo/README.md) includes synthesis-oriented SystemVerilog, a design specification, verification plan, independent scoreboard, directed boundary tests, constrained-random stress, assertions, coverage goals, CI, and waveform artifacts.
+
+## Fundamentals
 
 The first program is a 2-to-1 multiplexer.
 
