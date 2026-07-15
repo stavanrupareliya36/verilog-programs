@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 `default_nettype none
 
 module sync_fifo #(
@@ -66,7 +67,7 @@ module sync_fifo #(
         rd_ptr <= (rd_ptr == DEPTH-1) ? '0 : rd_ptr + 1'b1;
       end
 
-      unique case ({push, pop})
+      case ({push, pop})
         2'b10: occupancy <= occupancy + 1'b1;
         2'b01: occupancy <= occupancy - 1'b1;
         default: occupancy <= occupancy;
