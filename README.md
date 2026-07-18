@@ -4,7 +4,7 @@ Portfolio implementations with reproducible verification.
 
 ## Featured: Parameterized Synchronous FIFO
 
-The [FIFO project](fifo/README.md) includes synthesis-oriented SystemVerilog, a design specification, verification plan, independent scoreboard, directed boundary tests, constrained-random stress, assertions, coverage goals, CI, and waveform artifacts.
+The FIFO has moved to its own standalone repository: [FIFO Design & Verification](https://github.com/stavanrupareliya36/fifo-design-verification). It includes synthesis-oriented SystemVerilog, a design specification, verification plan, independent scoreboard, directed boundary tests, deterministic random stress, assertions, parameter-matrix regression, open-source lint/synthesis checks, CI, and waveform artifacts.
 
 ## Fundamentals
 
